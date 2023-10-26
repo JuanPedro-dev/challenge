@@ -1,0 +1,42 @@
+<mat-toolbar color="primary" class="desktop">
+
+    <span>Trionfini</span>
+
+    <span class="spacer"></span>
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/">Formulario</button>
+    <button mat-button routerLink="/">Dashboard</button>
+
+
+</mat-toolbar>
+
+
+<mat-toolbar color="primary" class="mobile ">
+
+    <span>Trionfini</span>
+
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>menu</mat-icon>
+    </button>
+    
+    <mat-menu #menu="matMenu">
+        
+          <button mat-menu-item>
+                <span mat-button routerLink="/crypto/converter">Home</span>
+          </button>
+          <button mat-menu-item>
+                <span mat-button routerLink="/crypto/price">Formulario</span>
+          </button>
+          <button mat-menu-item>
+                <span mat-button routerLink="/crypto/trending">Dashboard</span>
+          </button>
+
+    </mat-menu>
+
+</mat-toolbar>
+
+
+
+
+

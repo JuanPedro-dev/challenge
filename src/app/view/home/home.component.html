@@ -1,0 +1,45 @@
+<h1>Challenge</h1>
+
+<p class="text m-2"> Hola, me llamo Juan Pedro Trionfini, espero que este proyecto básico sea de su agrado. </p>
+
+<hr>
+
+<h2 class="m-2">Complete los formularios</h2>
+
+<section class="section">
+    <span class="list-section">
+        <mat-checkbox class="margin" [checked]="allComplete" [color]="task.color" [indeterminate]="someComplete()"
+            (change)="setAll($event.checked)">
+            {{task.name}}
+        </mat-checkbox>
+    </span>
+
+    <span class="list-section">
+        <ul>
+            <li *ngFor="let subtask of task.subtasks">
+                <mat-checkbox [(ngModel)]="subtask.completed" [color]="subtask.color"
+                    (ngModelChange)="updateAllComplete()">
+                    {{subtask.name}}
+                </mat-checkbox>
+
+            </li>
+        </ul>
+    </span>
+
+    <div class="m-2">
+        <!-- Formularios-->
+        <div *ngIf="task.subtasks![0].completed === true">
+            <app-frontend></app-frontend>
+        </div>
+    
+        <div *ngIf="task.subtasks![1].completed === true">
+            <app-backend></app-backend>
+        </div>
+    
+        <div *ngIf="task.subtasks![2].completed === true">
+            <app-testing></app-testing>
+        </div>
+    
+    </div>
+    
+</section>

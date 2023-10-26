@@ -1,1 +1,23 @@
-<p>frontend works!</p>
+<h1>Formulario Frontend</h1>
+
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+  <div class="container--input">
+    <label for="name" class="form-label">Nombre</label>
+    <input type="text" class="form-input" id="name" name="name" [(ngModel)]="formBackend.name" required #name="ngModel">
+  </div>
+
+  <div class="container--input">
+    <label for="lastName" class="form-label">Apellido</label>
+    <input type="text" class="form-input" id="lastName" name="lastName" [(ngModel)]="formBackend.lastName" required #name="ngModel">
+  </div>
+
+  <div class="container--input">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" class="form-input" id="email" name="email" [(ngModel)]="formBackend.email" required #name="ngModel">
+   </div>
+
+   <p *ngIf="onSend">Gracias por su postulación</p>
+  <button mat-raised-button color="primary">Enviar Postulación</button>
+
+
+</form>

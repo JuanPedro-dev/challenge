@@ -4,9 +4,11 @@
 
 <hr>
 
-<h2 class="m-2">Complete los formularios</h2>
-
+<div class="container-center">
+    
 <section class="section">
+    <h2 class="m-2">Complete los formularios</h2>
+    
     <span class="list-section">
         <mat-checkbox class="margin" [checked]="allComplete" [color]="task.color" [indeterminate]="someComplete()"
             (change)="setAll($event.checked)">
@@ -28,18 +30,19 @@
 
     <div class="m-2">
         <!-- Formularios-->
-        <div *ngIf="task.subtasks![0].completed === true">
+        <div class="m-2" *ngIf="task.subtasks![0].completed === true">
             <app-frontend></app-frontend>
         </div>
     
-        <div *ngIf="task.subtasks![1].completed === true">
+        <div class="m-2" *ngIf="task.subtasks![1].completed === true">
             <app-backend></app-backend>
         </div>
     
-        <div *ngIf="task.subtasks![2].completed === true">
+        <div class="m-2" *ngIf="task.subtasks![2].completed === true">
             <app-testing></app-testing>
         </div>
     
     </div>
     
 </section>
+</div>

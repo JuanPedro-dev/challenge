@@ -14,6 +14,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatPaginatorModule,
     MatSortModule,
     MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
   ],
   exports: [
     MatButtonModule,
@@ -47,7 +49,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatPaginatorModule,
     MatSortModule,
     MatAutocompleteModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
   ]
 })
 export class MaterialModule { }

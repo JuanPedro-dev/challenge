@@ -1,0 +1,70 @@
+<div class="container-center">
+
+    <div class="register">
+
+        <h1 class="register--tittle">Suscribite al newsletter </h1>
+
+        <form (ngSubmit)="onSubmit()" [formGroup]="formLogin">
+
+            <mat-form-field>
+                <mat-label>Nombre de Usuario</mat-label>
+                <input matInput #inputName [formControl]="nameFormControl" [errorStateMatcher]="matcher"
+                    autocomplete="off">
+                <mat-error *ngIf="nameFormControl.hasError('minlength') && !nameFormControl.hasError('required')">
+                    Min {{minLength}} caracteres!
+                </mat-error>
+                <mat-error *ngIf="nameFormControl.hasError('required')">
+                    Nombre de Usuario <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                    placeholder="johnDoe@example.com">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Ingrese un mail valido
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email es <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Introduce tu contraseña</mat-label>
+                <input autocomplete="off" matInput [type]="hide ? 'password' : 'text'" #inputPass
+                    [formControl]="passwordFormControl">
+
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error
+                    *ngIf="passwordFormControl.hasError('minlength') && !passwordFormControl.hasError('required')">
+                    Min {{minLength}} caracteres!
+                </mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Contraseña es <strong>requerida</strong>
+                </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Contacto</mat-label>
+                <input type="text" matInput [formControl]="contactFormControl" [errorStateMatcher]="matcher"
+                    mask="(000) 0000-0000">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input type="text" matInput [formControl]="dateBirthFormControl" [errorStateMatcher]="matcher"
+                    mask="d0/M0/0000" >
+            </mat-form-field>
+
+            <div class="container-btn">
+                <button  class="btn btn--create" mat-button (click)="openDialog()">Enviar</button>
+            </div>
+
+        </form>
+    </div>
+</div>

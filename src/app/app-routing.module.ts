@@ -13,6 +13,11 @@ const routes: Routes = [
       import('./view/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'form',
+    loadChildren: () =>
+      import('./view/form/form.module').then((m) => m.FormModule),
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full',

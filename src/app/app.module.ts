@@ -7,19 +7,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { MaterialModule } from './shared/material/material.module';
+import { GridComponent } from './view/dashboard/components/grid/grid.component';
+import { IgxGridModule } from 'igniteui-angular';
+
+import { provideEnvironmentNgxMask } from 'ngx-mask';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { NewGridComponent } from './newgrid/newgrid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    GridComponent,
+    NewGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
+    IgxGridModule
   ],
-  providers: [],
+  providers: [
+    provideNgxMask(),
+    provideEnvironmentNgxMask(),
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

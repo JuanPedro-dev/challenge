@@ -12,14 +12,11 @@ import { IgxGridModule } from 'igniteui-angular';
 
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { NewGridComponent } from './newgrid/newgrid.component';
-
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     GridComponent,
-    NewGridComponent
   ],
   imports: [
     BrowserModule,

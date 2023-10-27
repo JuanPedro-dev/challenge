@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GridComponent } from './view/dashboard/components/grid/grid.component';
-import { NewGridComponent } from './newgrid/newgrid.component';
 
 const routes: Routes = [
   {
@@ -22,7 +21,6 @@ const routes: Routes = [
     loadChildren: () => import('./view/dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   { path: 'asdf', component: GridComponent, data: { text: 'grid' } },
-  { path: 'newgrid', component: NewGridComponent, data: { text: 'newGrid' } },
   {
     path: '**',
     redirectTo: 'home',
